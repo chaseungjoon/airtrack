@@ -1,6 +1,7 @@
 .venv
 .idea
 .claude
+__pycache__
 
 PLAN.md
 AGENTS.md
