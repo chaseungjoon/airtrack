@@ -1,5 +1,6 @@
 .venv
 .idea
+.claude
 
 PLAN.md
 AGENTS.md
