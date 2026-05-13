@@ -1,0 +1,9 @@
+mediapipe>=0.10
+opencv-python>=4.9
+numpy>=1.26
+pynput>=1.7
+pyobjc-framework-Cocoa>=10.0
+pyobjc-framework-Quartz>=10.0
+torch>=2.2
+pytest>=8.0
+pytest-mock>=3.12
