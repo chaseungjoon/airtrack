@@ -1,7 +1,7 @@
 # AirTrack 
 > **Your Keyboard is now your Trackpad.**
 
-AirTrack is a revolutionary software utility that uses your laptop's webcam and On-device AI to turn your keyboard area into a virtual trackpad. Stop moving your wrists down; start controlling your cursor right where you type.
+AirTrack is a software utility that uses your laptop's webcam and On-device AI to turn your keyboard area into a virtual trackpad. Stop moving your wrists down; start controlling your cursor right where you type.
 
 ## Key Features
 * **Hardware-Free:** No extra hardware required. Just your built-in webcam.
