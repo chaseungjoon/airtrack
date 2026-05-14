@@ -1,13 +1,11 @@
-# AirTrack 👐
-> **Your current keyboard is now a trackpad. Zero extra hardware, zero toggles. Seamless control powered by 3D vision and audio processing.**
+# AirTrack
+> **Your current keyboard is now a trackpad. Zero extra hardware, zero toggles. Seamless control powered by multimodal sensor fusion.**
 
-*⚠️ **Note: AirTrack is currently a Work In Progress (WIP).** Core features and models are under active development.*
+*⚠️ **Note: AirTrack is currently a Work In Progress (WIP).** Core multimodal fusion models and DSP pipelines are under active development.*
 
-AirTrack is a software defined virtual trackpad that transforms your physical keyboard into a gesture interface. By fusing your laptop's webcam feed with microphone acoustic data, it intelligently distinguishes between intentional typing and trackpad gestures—letting you control your cursor right where you type, without ever moving your wrists.
+AirTrack is a software-defined virtual trackpad that transforms your physical laptop keyboard into a gesture interface. By utilizing a **Late-Sensor Fusion architecture**, it combines your webcam, built-in microphones/speakers, and OS-level keystroke dynamics to perfectly distinguish between intentional typing and trackpad gestures. Control your cursor right where you type, without ever moving your wrists.
 
-## Key Features
-1. **Zero Hardware, Zero Toggles:** Instantly transition from typing to gliding without pressing any hotkeys or buying external accessories.
-2. **Audio Visual AI Fusion:** Combines hand kinematic tracking with acoustic friction profiling (mic data) to accurately detect touches and count fingers, completely bypassing standard webcam depth limitations.
-3. **Low Latency:** Optimized for Apple Silicon and local execution for a realtime, lag free experience.
-4. **Haptic Feedback:** Feel the exact moment you enter gesture mode with direct MacBook Taptic Engine integration.
-5. **Privacy First:** 100% on-device processing. No video or audio data ever leaves your machine.
+## 3-Module Architecture
+1. **Action State Discriminator:** Listens to structure-borne acoustic impacts (bone conduction) and OS keystroke micro-delays to instantly switch between `TYPING` and `GESTURE` modes without hotkeys.
+2. **Kinematic Trajectory Decoder:** Uses top-down 2D vision to translate fingertip movement into OS-level cursor commands and clicks.
+3. **Active Contact Estimator:** Emits an inaudible 20kHz FMCW Sonar from your MacBook speakers to measure the acoustic cross-section (Doppler shift) of your fingers, perfectly differentiating a 2-finger scroll from a 3-finger swipe without relying on camera depth.

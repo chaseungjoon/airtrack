@@ -33,9 +33,9 @@ except ImportError as exc:
     print("Run:  pip install sounddevice scipy numpy")
     sys.exit(1)
 
-from airtrack.audio.recorder import MicRecorder
-from airtrack.audio.swipe_detector import SwipeDetector, SwipeEvent
-from airtrack.audio.finger_classifier import FingerClassifier, LABEL_TO_INT
+from airtrack.shared.recorder import MicRecorder
+from airtrack.shared.swipe_detector import SwipeDetector, SwipeEvent
+from airtrack.contact.finger_classifier import FingerClassifier, LABEL_TO_INT
 
 
 # ── display helpers ─────────────────────────────────────────────────────────

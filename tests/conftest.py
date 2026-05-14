@@ -5,10 +5,9 @@ from __future__ import annotations
 import numpy as np
 import pytest
 
-from airtrack.ml.feature_extractor import FeatureExtractor
-from airtrack.ml.state_classifier import HybridStateClassifier
-from airtrack.state.mode_manager import ModeManager
-from airtrack.vision.calibration import HomographyCalibration
+from airtrack.action_state.bimanual import FeatureExtractor
+from airtrack.action_state.discriminator import HybridStateClassifier, ModeManager
+from airtrack.shared.calibration import HomographyCalibration
 from tests.fakes import (
     FakeCursorController,
     FakeHapticFeedback,

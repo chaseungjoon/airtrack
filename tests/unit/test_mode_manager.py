@@ -2,8 +2,7 @@
 
 import pytest
 
-from airtrack.ml.state_classifier import TrackMode
-from airtrack.state.mode_manager import ModeManager
+from airtrack.action_state.discriminator import TrackMode, ModeManager
 from tests.fakes import FakeHapticFeedback, make_hand
 
 

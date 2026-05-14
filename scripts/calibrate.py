@@ -12,9 +12,9 @@ from __future__ import annotations
 import cv2
 import logging
 
-from airtrack.camera.capture import CameraCapture
-from airtrack.vision.hand_tracker import HandTracker
-from airtrack.vision.calibration import HomographyCalibration
+from airtrack.shared.camera_capture import CameraCapture
+from airtrack.shared.hand_tracker import HandTracker
+from airtrack.shared.calibration import HomographyCalibration
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)

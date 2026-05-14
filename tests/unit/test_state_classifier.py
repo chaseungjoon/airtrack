@@ -2,8 +2,8 @@
 
 import numpy as np
 
-from airtrack.ml.state_classifier import HybridStateClassifier, TrackMode
-from airtrack.ml.feature_extractor import FeatureExtractor
+from airtrack.action_state.discriminator import HybridStateClassifier, TrackMode
+from airtrack.action_state.bimanual import FeatureExtractor
 
 
 def _feature(velocity: float = 0.0) -> np.ndarray:

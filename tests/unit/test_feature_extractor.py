@@ -3,8 +3,10 @@
 import numpy as np
 import pytest
 
-from airtrack.ml.feature_extractor import FeatureExtractor, FeatureVector
-from airtrack.vision.hand_tracker import HandLandmarks
+from airtrack.action_state.bimanual import FeatureExtractor
+from airtrack.shared.hand_tracker import HandLandmarks
+
+FeatureVector = None  # kept for type annotation compatibility
 
 
 def _make_hand(x: float = 0.5, y: float = 0.5) -> HandLandmarks:

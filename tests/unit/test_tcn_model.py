@@ -6,7 +6,7 @@ pytest.importorskip("torch", reason="torch not installed")
 
 import torch  # noqa: E402 (after importorskip)
 
-from airtrack.ml.tcn_model import GestureClassifierTCN  # noqa: E402
+from airtrack.action_state.tcn_model import GestureClassifierTCN  # noqa: E402
 
 
 @pytest.fixture

@@ -10,7 +10,7 @@ from typing import Optional
 
 import numpy as np
 
-from airtrack.vision.hand_tracker import HandLandmarks
+from airtrack.shared.hand_tracker import HandLandmarks
 
 
 # ---------------------------------------------------------------------------

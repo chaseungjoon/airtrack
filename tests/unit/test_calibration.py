@@ -3,7 +3,7 @@
 import numpy as np
 import pytest
 
-from airtrack.vision.calibration import HomographyCalibration, CalibrationError
+from airtrack.shared.calibration import HomographyCalibration, CalibrationError
 
 
 def _make_calibrated() -> HomographyCalibration:

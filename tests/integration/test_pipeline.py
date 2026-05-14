@@ -7,9 +7,8 @@ from __future__ import annotations
 
 import numpy as np
 
-from airtrack.ml.state_classifier import TrackMode
-from airtrack.state.mode_manager import ModeManager
-from airtrack.vision.calibration import HomographyCalibration
+from airtrack.action_state.discriminator import TrackMode, ModeManager
+from airtrack.shared.calibration import HomographyCalibration
 from tests.fakes import (
     FakeCursorController,
     FakeHapticFeedback,
