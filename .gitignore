@@ -2,6 +2,7 @@
 .idea
 .claude
 __pycache__
+*.pyc
 
 PLAN.md
 AGENTS.md
