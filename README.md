@@ -9,5 +9,5 @@ AirTrack is a software defined virtual trackpad for MacBooks that transforms the
 
 ## 3 Module Architecture
 1. **Action State Discriminator:** Listens to structure-borne acoustic impacts (bone conduction) and OS keystroke micro delays to instantly switch between `TYPING` and `GESTURE` modes without hotkeys.
-2. **Trajectory Decoder:** Uses top down 2D vision to translate fingertip movement into OS level cursor commands and clicks.
+2. **Kinematic Trajectory Decoder:** Uses top down 2D vision to translate fingertip movement into OS level cursor commands and clicks.
 3. **Active Contact Estimator:** Emits an inaudible 20kHz FMCW Sonar from your MacBook speakers to measure the acoustic cross-section (Doppler shift) of your fingers, perfectly differentiating a 2-finger scroll from a 3-finger swipe without relying on camera depth.
