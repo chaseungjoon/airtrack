@@ -28,12 +28,14 @@ class KeystrokeMonitor:
     def __init__(self, window_sec: float = WINDOW_DURATION_SEC) -> None:
         self._window_sec = window_sec
         self._timestamps: deque[float] = deque()
+        self._last_press: Optional[float] = None
         self._lock = threading.Lock()
         self._listener: Optional[keyboard.Listener] = None
 
     def _on_press(self, key: keyboard.Key | keyboard.KeyCode | None) -> None:
         now = time.monotonic()
         with self._lock:
+            self._last_press = now
             self._timestamps.append(now)
             cutoff = now - self._window_sec
             while self._timestamps and self._timestamps[0] < cutoff:
@@ -49,6 +51,13 @@ class KeystrokeMonitor:
                 self._timestamps.popleft()
             count = len(self._timestamps)
         return count / self._window_sec if self._window_sec > 0 else 0.0
+
+    @property
+    def seconds_since_last_press(self) -> float:
+        """Seconds since the most recent key press (inf if none observed)."""
+        with self._lock:
+            last = self._last_press
+        return float("inf") if last is None else time.monotonic() - last
 
     def start(self) -> None:
         self._listener = keyboard.Listener(on_press=self._on_press)

@@ -8,3 +8,7 @@ __pycache__
 PLAN.md
 AGENTS.md
 PROGRESS.md
+
+# auto-downloaded model bundles
+models/hand_landmarker.task
+models/*.task.part
