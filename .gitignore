@@ -2,12 +2,14 @@
 .idea
 .claude
 __pycache__
+.pytest_cache/
 */__pycache__
 *.pyc
 
 PLAN.md
 AGENTS.md
 PROGRESS.md
+TASKS.md
 
 # auto-downloaded model bundles
 models/hand_landmarker.task
