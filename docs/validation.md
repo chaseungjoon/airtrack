@@ -1,7 +1,8 @@
 # Validation
 
-Live pose/clutch results remain unconfirmed. A synthetic test pass cannot establish usability over
-a keyboard.
+The checks below evaluate the existing vision prototype. New sensing experiments follow the
+[research roadmap](roadmap.md). Live pose/clutch results remain unconfirmed; a synthetic test pass
+cannot establish usability over a keyboard.
 
 ## 1. Finger counting
 

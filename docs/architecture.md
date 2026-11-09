@@ -1,7 +1,8 @@
 # Architecture
 
-AirTrack's current direction is vision plus keyboard activity. Extended-finger poses choose an
-action; recent keystrokes suppress gestures. Physical surface contact is outside this design.
+The existing prototype uses vision plus keyboard activity. The descriptions below document that
+code, not a chosen input method for the finished project. Current constraints and sensing experiments
+are in [IDEAS.md](../IDEAS.md); keyboard-facing camera placement is outside the project goal.
 
 ## Code layout
 

@@ -1,12 +1,11 @@
 # AirTrack
 
-An experimental macOS virtual trackpad using webcam hand tracking and keyboard activity.
+Experimental macOS cursor control with your hands on the keyboard. No trackpad or shortcut keys.
 
-Early alpha: pose counting and typing-lockout demos exist. The full cursor application still needs
-integration.
+Early alpha: vision demos exist; the input method is still being researched.
 
-- [Setup and demos](docs/getting-started.md)
 - [Documentation](docs/README.md)
-- [Next steps](docs/roadmap.md)
+- [Research ideas](IDEAS.md)
+- [Setup and demos](docs/getting-started.md)
 
 [MIT License](LICENSE)

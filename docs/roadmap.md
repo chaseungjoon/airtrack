@@ -1,50 +1,27 @@
 # Next steps
 
-AirTrack has enough components to attempt a small cursor prototype. Its viability over a laptop
-keyboard is still unproven. The hardest question is whether the camera can see deliberate gestures
-in a comfortable position while the clutch rejects typing, pauses, and casual hand movement.
+The research goal is continuous cursor control with hands at the keyboard, no trackpad, no assigned
+shortcut keys, and no new hardware. [IDEAS.md](../IDEAS.md) separates MacBook-only experiments from
+optional use of existing Apple devices.
 
-## What the structure supports
+## Experiment order
 
-The tracker, pose counter, clutch, motion parser, and output bridge are separate classes. This makes
-it practical to test decisions without moving the real cursor. The MediaPipe wrapper already
-isolates inference, so changing the tracking model should not require rewriting gesture logic.
+1. **Inventory accessible signals.** Check the actual MacBook's IMU, audio channels, sample rates,
+   timestamps, and processing. Record unavailable or undocumented paths. Do the same for any
+   existing Watch or AirPods used in a separate experiment.
+2. **Measure continuous motion.** Start with synchronized chassis/audio sensing and stereo acoustic
+   probes. Compare trajectories, stops, and contact changes with typing and repositioning. Test on
+   another session and desk surface before trusting a fitted model.
+3. **Test intent and button state.** Measure false cursor activation during typing pauses, accidental
+   text suppression, clicks, held drags, and release. No shortcut key may hide a detection failure.
+4. **Connect a proven signal.** Repair entry-point imports and packaging, then use a fake output sink
+   before enabling Quartz events. Reset movement and release buttons on missing data or typing.
+5. **Evaluate the whole interaction.** Measure latency, drift, precision, typing-to-pointing transition,
+   and comfort. Gesture-classification accuracy alone cannot establish cursor usability.
 
-The main obstacle is integration drift: the new interaction exists in demos, while the application
-and older estimators still describe a different pipeline. More modalities would increase the number
-of paths to reconcile.
+## Existing code
 
-## Development order
-
-1. **Measure the interaction.** Run the [pose and clutch checks](validation.md) with hands near the
-   keyboard. Compare this with holding a hand higher in view. Record tracking loss and discomfort as
-   well as accuracy. If framing fails, address camera placement before tuning thresholds or training
-   a model.
-2. **Connect one cursor path.** Repair entry-point imports and packaging, then wire tracker → pose →
-   clutch → motion → output. Start with cursor movement and one click per pinch. Add a dry-run
-   output sink so the same pipeline can be inspected without OS events.
-3. **Make interruptions predictable.** Stop output on typing or invalid tracking, reset motion on
-   reacquisition, select a stable primary hand, and release mouse buttons on every exit path. Add
-   tests for these cases before enabling drag.
-4. **Tune mapping and calibration.** Compare relative cursor movement with the existing absolute
-   homography approach. Use one coordinate convention, reject invalid corners, and save
-   camera/resolution settings with calibration. Normalize pinch distance by hand size and expose
-   sensitivity settings.
-5. **Add two-finger scrolling.** Once move/click is usable, add scroll routing and test pose changes
-   during motion. Keep desktop swipes and other gestures deferred until this smaller set works
-   consistently.
-
-## Decisions to defer
-
-Keep the current package layout until the first pipeline works. Then isolate retired audio
-experiments and make their dependencies optional; `contact/` can become a pose/gesture module at
-that point.
-
-Profile capture, inference, decision, and output time separately before adding multiprocessing. The
-old targets of under 50 ms end-to-end latency and about ±2 px resting jitter remain goals.
-`TARGET_FPS = 60` requests a capture rate; it is not a benchmark.
-
-Keep the TCN optional until recorded failures show a gap in the pose/clutch rules. A later model
-should be evaluated on independently labeled sessions; training on heuristic labels alone cannot
-establish that it fixes those heuristics. Haptics, extra hardware, and app packaging can follow
-evidence that the basic interaction is useful.
+Camera tracking, pose/clutch demos, motion smoothing, and output classes are reusable experiments.
+They do not establish the new sensing method. Main imports are stale, calibration units disagree,
+and held pinches repeatedly click. See [architecture](architecture.md) for the implementation map
+and [validation](validation.md) for the older tests.

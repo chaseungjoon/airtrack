@@ -1,6 +1,7 @@
 # Getting started
 
-Run commands from the repository root. The current entry points are the standalone demos;
+Run commands from the repository root. These standalone demos exercise the existing vision
+prototype; they do not implement the input requirements in [IDEAS.md](../IDEAS.md).
 `airtrack/main.py` still imports removed packages.
 
 ## Setup

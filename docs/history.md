@@ -35,6 +35,6 @@ been integrated into the main application.
 | Acoustic finger count and sonar | `airtrack/contact/finger_classifier.py`, `airtrack/contact/sonar.py` |
 | Manual trials | `scripts/mvp_audio_test.py`, `scripts/mvp_audio_train.py`, `scripts/mvp_sonar_test.py` |
 
-Audio is outside the intended vision pipeline, though the older `ContactEstimator` still accepts
-sonar. Proposals for capacitive hardware or contact microphones are deferred until a measured
-need for physical contact sensing exists.
+Audio is outside the existing vision prototype, though the older `ContactEstimator` still accepts
+sonar. Current [research ideas](../IDEAS.md) revisit software-only sensing under the fixed hardware
+constraints; earlier proposals for added sensors are outside that scope.
